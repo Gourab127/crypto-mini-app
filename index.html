@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading & Mining Fund</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Balance Header -->
+        <div class="header">
+            <h2>💰 Balance</h2>
+            <div class="balance-display"><span id="user-balance">0.00</span> USDT</div>
+        </div>
+
+        <!-- TAB 1: MINING PAGE -->
+        <div id="mining-tab" class="tab-content active">
+            <div class="mining-area">
+                <p class="tap-hint">Tap Coin to Mine!</p>
+                <div class="coin-container" id="coin-btn">
+                    <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="Coin" class="coin-img">
+                </div>
+                <div class="energy-bar-container">
+                    <span>⚡ Energy: <span id="energy">1000</span>/1000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: DEPOSIT PAGE -->
+        <div id="deposit-tab" class="tab-content">
+            <h3>📥 Deposit USDT</h3>
+            <p>Select Network & Send Funds:</p>
+            <div class="wallet-box">
+                <small>USDT (BEP20 Address):</small>
+                <code>0x1234567890abcdef1234567890abcdef12345678</code>
+            </div>
+            <div class="form-group">
+                <input type="number" id="dep-amount" placeholder="Amount (USDT)">
+                <input type="text" id="dep-txid" placeholder="Transaction Hash / TxID">
+                <button class="btn primary-btn" onclick="submitDeposit()">Submit Deposit</button>
+            </div>
+        </div>
+
+        <!-- TAB 3: WITHDRAW PAGE -->
+        <div id="withdraw-tab" class="tab-content">
+            <h3>📤 Withdraw USDT</h3>
+            <div class="form-group">
+                <input type="text" id="with-wallet" placeholder="Your USDT Wallet Address">
+                <input type="number" id="with-amount" placeholder="Amount (USDT)">
+                <button class="btn secondary-btn" onclick="submitWithdraw()">Request Withdrawal</button>
+            </div>
+        </div>
+
+        <!-- TAB 4: REFERRAL PAGE -->
+        <div id="referral-tab" class="tab-content">
+            <h3>🔗 Invite & Earn</h3>
+            <p>Earn 0.50 USDT for each invited friend!</p>
+            <div class="ref-box">
+                <input type="text" id="ref-link" value="https://t.me/YourBot?start=ref" readonly>
+                <button class="btn primary-btn" onclick="copyRef()">Copy Link</button>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="bottom-nav">
+            <button class="nav-btn active" onclick="switchTab('mining-tab', this)">⛏️ Mine</button>
+            <button class="nav-btn" onclick="switchTab('deposit-tab', this)">📥 Deposit</button>
+            <button class="nav-btn" onclick="switchTab('withdraw-tab', this)">📤 Withdraw</button>
+            <button class="nav-btn" onclick="switchTab('referral-tab', this)">👥 Invite</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
