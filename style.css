@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121824;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #1e2738;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+.header {
+    background: linear-gradient(135deg, #1f293d, #111723);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #2a364f;
+}
+
+.balance-display {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00e676;
+    margin-top: 5px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Mining Tab */
+.mining-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.tap-hint {
+    margin-bottom: 20px;
+    color: #a0aec0;
+}
+
+.coin-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2b3a55, #151d2a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+    transition: transform 0.1s ease;
+}
+
+.coin-container:active {
+    transform: scale(0.92);
+}
+
+.coin-img {
+    width: 120px;
+    height: 120px;
+}
+
+.energy-bar-container {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* Forms & Buttons */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: #fff;
+    outline: none;
+}
+
+.wallet-box {
+    background-color: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    word-break: break-all;
+}
+
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: #00e676;
+    color: #000;
+}
+
+.secondary-btn {
+    background-color: #ff5252;
+    color: #fff;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #151d2a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #2a364f;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-btn.active {
+    color: #00e676;
+    font-weight: bold;
+}
